@@ -85,7 +85,6 @@ echo -e "${YELLOW}│❏>${NC} 4 ${CY}Trojan Go Menu       ${NC}            ""${
 echo -e "${YELLOW}│❏>${NC} 5 ${CY}Trojan GPW           ${NC}            ""${YELLOW}│❏>${NC} x ${NC} ${CY}Exit"
 echo -e "${LWHITE}"
 read -p " 「Selected Menu 」  >>   "  opt
-echo -e   ""
 case $opt in
 1) clear ; menu-ssh ;;
 2) clear ; menu-vmess ;;
