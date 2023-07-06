@@ -72,6 +72,7 @@ blue='\e[34m'
 PURPLE='\e[35m'
 CY='\e[1;36m'
 Lred='\e[91m'
+CYAN='\e[96m'
 Lgreen='\e[92m'
 YELLOW='\e[93m'
 yl='\e[93m'
@@ -132,15 +133,15 @@ echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━�
 echo -e "❇️ Cpu Usage   : $cpu_usage"
 echo -e "❇️ Total RAM   : $tram MB"
 echo -e "❇️ Public IP   : $IPVPS"
-echo -e "❇️ Domain      : $Domain"
+echo -e "❇️ Domain      : $domain"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m              ⇱ Menu Information ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "1 : ${CY}Ssh / OvPn           ${NC}    ""6 : ${CY}Extra  Menu     ${NC}"
-echo -e "2 : ${CY}Vmess Menu           ${NC}    ""7 : ${CY}Status Service  ${NC}"
-echo -e "3 : ${CY}Vless Menu           ${NC}    ""8 : ${CY}Clear Cache     ${NC}"
-echo -e "4 : ${CY}Trojan Go Menu       ${NC}    ""9 : ${CY}Update Menu     ${NC}"                  
-echo -e "5 : ${CY}Trojan GPW           ${NC}    ""x : ${CY}Exit            ${NC}"
+echo -e "1 : ${CY}Ssh / OvPn        ${NC}    ""6 : ${CY}Extra  Menu     ${NC}"
+echo -e "2 : ${CY}Vmess Menu        ${NC}    ""7 : ${CY}Status Service  ${NC}"
+echo -e "3 : ${CY}Vless Menu        ${NC}    ""8 : ${CY}Clear Cache     ${NC}"
+echo -e "4 : ${CY}Trojan Go Menu    ${NC}    ""9 : ${CY}Update Menu     ${NC}"                  
+echo -e "5 : ${CY}Trojan GPW        ${NC}    ""x : ${CY}Exit            ${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[44;1;39m              ⇱ Order Information ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
