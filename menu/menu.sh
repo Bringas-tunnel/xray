@@ -127,12 +127,12 @@ uram=$( free -m | awk 'NR==2 {print $3}' )
 fram=$( free -m | awk 'NR==2 {print $4}' )
 clear 
 echo -e "${yl}❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏${NC}"                                                                 
-echo -e "\e[33m Operating System     \e[0m┣❏  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
-echo -e "\e[33m Total Amount Of RAM  \e[0m┣❏  $tram MB"
-echo -e "\e[33m System Uptime        \e[0m┣❏  $uptime "
-echo -e "\e[33m Isp Name             \e[0m┣❏  $ISP"
-echo -e "\e[33m Domain               \e[0m┣❏  $domain"	
-echo -e "\e[33m Ip Vps               \e[0m┣❏  $IPVPS"
+echo -e "\e[33m O S    \e[0m ❏  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
+echo -e "\e[33m RAM    \e[0m ❏  $tram MB"
+echo -e "\e[33m UPT    \e[0m ❏  $uptime "
+echo -e "\e[33m ISP    \e[0m ❏  $ISP"
+echo -e "\e[33m DOM    \e[0m ❏  $domain"	
+echo -e "\e[33m IPV    \e[0m ❏  $IPVPS"
 echo -e "${yl}❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏${NC}"	
 echo -e "${GREEEN}━━━━━[ ACOUNT MENU ]━━━━━${NC}"
 echo -e "1 : ${CY}Ssh / OvPn           ${NC}            "
