@@ -67,8 +67,7 @@ freq=$( awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo )
 tram=$( free -m | awk 'NR==2 {print $2}' )
 uram=$( free -m | awk 'NR==2 {print $3}' )
 fram=$( free -m | awk 'NR==2 {print $4}' )
-clear 
-echo -e ""                                                                                         "
+clear                                                                                        
 echo -e "\e[33m Operating System     \e[0m┣❏  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
 echo -e "\e[33m Total Amount Of RAM  \e[0m┣❏  $tram MB"
 echo -e "\e[33m System Uptime        \e[0m┣❏  $uptime "
