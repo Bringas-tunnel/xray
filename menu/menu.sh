@@ -150,7 +150,7 @@ echo -e "${YELLOW}│❏${NC} 8 : ${CY}Clear Cache"
 echo -e "${YELLOW}│❏${NC} 9 : ${CY}Update Menu"
 echo -e "${YELLOW}│❏${NC} x : ${CY}Exit"
 echo -e "       ${green}--------------------------${NC}"
-echo -e "       ${CY} EXPIRED SCRIPT${NC} : ${YELLOW} $exp Hari  ${NC}"
+echo -e "       ${CY} EXPIRED SCRIPT${NC} : ${YELLOW} $exp2 Hari  ${NC}"
 echo -e "       ${CY} ORDER SCRIPT${NC}   : ${YELLOW} $Name      ${NC}"
 echo -e "       ${green}--------------------------${NC}"
 
