@@ -13,8 +13,7 @@ green='\e[32m'
 GREEEN='\e[1;32m'
 blue='\e[34m'
 PURPLE='\e[35m'
-cyan='\e[36m'
-CY=cyan='\e[1;36m'
+CY='\e[1;36m'
 Lred='\e[91m'
 Lgreen='\e[92m'
 YELLOW='\e[93m'
@@ -69,7 +68,7 @@ tram=$( free -m | awk 'NR==2 {print $2}' )
 uram=$( free -m | awk 'NR==2 {print $3}' )
 fram=$( free -m | awk 'NR==2 {print $4}' )
 clear 
-echo -e "                                                                                         "
+echo -e ""                                                                                         "
 echo -e "\e[33m Operating System     \e[0m┣❏  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
 echo -e "\e[33m Total Amount Of RAM  \e[0m┣❏  $tram MB"
 echo -e "\e[33m System Uptime        \e[0m┣❏  $uptime "
@@ -77,14 +76,14 @@ echo -e "\e[33m Isp Name             \e[0m┣❏  $ISP"
 echo -e "\e[33m Domain               \e[0m┣❏  $domain"	
 echo -e "\e[33m Ip Vps               \e[0m┣❏  $IPVPS"
 echo -e ""	
-echo -e "${GREEEN}╭━━━━━「Account Menu」 ━━━━━  ${NC}                  ""${GREEEN}╭━━━━━「System Menu」 ━━━━━  ${NC}"
-echo -e "${YELLOW}│                                                              ${NC}                  ""${YELLOW}│                                                            ${NC}" 
-echo -e "${YELLOW}│❏>${NC} 1 ${CY}Ssh / OvPn           ${NC}                  ""${YELLOW}│❏>${NC} 6 ${NC} ${CY}Extra  Menu"
-echo -e "${YELLOW}│❏>${NC} 2 ${CY}Vmess Menu        ${NC}                  ""${YELLOW}│❏>${NC} 7 ${NC} ${CY}Status Service"
-echo -e "${YELLOW}│❏>${NC} 3 ${CY}Vless Menu          ${NC}                   ""${YELLOW}│❏>${NC} 8 ${NC} ${CY}Clear Cache"
-echo -e "${YELLOW}│❏>${NC} 4 ${CY}Trojan Go Menu  ${NC}                   ""${YELLOW}│❏>${NC} 9 ${NC} ${CY}Update Menu"                  
-echo -e "${YELLOW}   ❏>${NC} 5 ${CY}Trojan GPW         ${NC}                   ""${YELLOW}│❏>${NC} x ${NC} ${CY}Exit"
-echo -e "${LWHITE}
+echo -e "${GREEEN}╭━━━━━「Account Menu」 ━━━━━          ${NC}            ""${GREEEN}╭━━━━━「System Menu」 ━━━━━  ${NC}"
+echo -e "${YELLOW}│                                    ${NC}            ""${YELLOW}│                           ${NC}" 
+echo -e "${YELLOW}│❏>${NC} 1 ${CY}Ssh / OvPn           ${NC}            ""${YELLOW}│❏>${NC} 6 ${NC} ${CY}Extra  Menu"
+echo -e "${YELLOW}│❏>${NC} 2 ${CY}Vmess Menu           ${NC}            ""${YELLOW}│❏>${NC} 7 ${NC} ${CY}Status Service"
+echo -e "${YELLOW}│❏>${NC} 3 ${CY}Vless Menu           ${NC}            ""${YELLOW}│❏>${NC} 8 ${NC} ${CY}Clear Cache"
+echo -e "${YELLOW}│❏>${NC} 4 ${CY}Trojan Go Menu       ${NC}            ""${YELLOW}│❏>${NC} 9 ${NC} ${CY}Update Menu"                  
+echo -e "${YELLOW}│❏>${NC} 5 ${CY}Trojan GPW           ${NC}            ""${YELLOW}│❏>${NC} x ${NC} ${CY}Exit"
+echo -e "${LWHITE}"
 read -p " 「Selected Menu 」  >>   "  opt
 echo -e   ""
 case $opt in
