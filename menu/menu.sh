@@ -1,4 +1,61 @@
 #!/bin/bash
+BURIQ () {
+    curl -sS https://raw.githubusercontent.com/Bringas-tunnel/ipmu/main/ini > /root/tmp
+    data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
+    for user in "${data[@]}"
+    do
+    exp=( `grep -E "^### $user" "/root/tmp" | awk '{print $3}'` )
+    d1=(`date -d "$exp" +%s`)
+    d2=(`date -d "$biji" +%s`)
+    exp2=$(( (d1 - d2) / 86400 ))
+    if [[ "$exp2" -le "0" ]]; then
+    echo $user > /etc/.$user.ini
+    else
+    rm -f /etc/.$user.ini > /dev/null 2>&1
+    fi
+    done
+    rm -f /root/tmp
+}
+
+MYIP=$(curl -sS ipv4.icanhazip.com)
+Name=$(curl -sS https://raw.githubusercontent.com/Bringas-tunnel/ipmu/main/ini | grep $MYIP | awk '{print $2}')
+echo $Name > /usr/local/etc/.$Name.ini
+CekOne=$(cat /usr/local/etc/.$Name.ini)
+
+Bloman () {
+if [ -f "/etc/.$Name.ini" ]; then
+CekTwo=$(cat /etc/.$Name.ini)
+    if [ "$CekOne" = "$CekTwo" ]; then
+        res="Expired"
+    fi
+else
+res="Permission Accepted..."
+fi
+}
+
+PERMISSION () {
+    MYIP=$(curl -sS ipv4.icanhazip.com)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/Bringas-tunnel/ipmu/main/ini | awk '{print $4}' | grep $MYIP)
+    if [ "$MYIP" = "$IZIN" ]; then
+    Bloman
+    else
+    res="Permission Denied!"
+    fi
+    BURIQ
+}
+red='\e[1;31m'
+green='\e[1;32m'
+NC='\e[0m'
+green() { echo -e "\\033[32;1m${*}\\033[0m"; }
+red() { echo -e "\\033[31;1m${*}\\033[0m"; }
+PERMISSION
+
+if [ "$res" = "Expired" ]; then
+Exp="\e[36mExpired\033[0m"
+else
+Exp=$(curl -sS https://raw.githubusercontent.com/Bringas-tunnel/ipmu/main/ini | grep $MYIP | awk '{print $3}')
+fi
+####
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo "Checking VPS"
 #########################
@@ -17,6 +74,7 @@ CY='\e[1;36m'
 Lred='\e[91m'
 Lgreen='\e[92m'
 YELLOW='\e[93m'
+yl='\e[93m'
 LWHITE='\e[97m'
 NC='\e[0m'
 GREEN='\033[0;32m'
@@ -67,29 +125,35 @@ freq=$( awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo )
 tram=$( free -m | awk 'NR==2 {print $2}' )
 uram=$( free -m | awk 'NR==2 {print $3}' )
 fram=$( free -m | awk 'NR==2 {print $4}' )
-clear                                                                                        
+clear 
+echo -e "${yl}❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏${NC}"                                                                 
 echo -e "\e[33m Operating System     \e[0m┣❏  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
 echo -e "\e[33m Total Amount Of RAM  \e[0m┣❏  $tram MB"
 echo -e "\e[33m System Uptime        \e[0m┣❏  $uptime "
 echo -e "\e[33m Isp Name             \e[0m┣❏  $ISP"
 echo -e "\e[33m Domain               \e[0m┣❏  $domain"	
 echo -e "\e[33m Ip Vps               \e[0m┣❏  $IPVPS"
-echo -e ""	
+echo -e "${yl}❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏${NC}"	
 echo -e "${GREEEN}╭━━━━━「Account Menu 」                ${NC}            "
 echo -e "${YELLOW}│                                    ${NC}            " 
-echo -e "${YELLOW}│❏>${NC} 1 ${CY}Ssh / OvPn           ${NC}            "
-echo -e "${YELLOW}│❏>${NC} 2 ${CY}Vmess Menu           ${NC}            "
-echo -e "${YELLOW}│❏>${NC} 3 ${CY}Vless Menu           ${NC}            "
-echo -e "${YELLOW}│❏>${NC} 4 ${CY}Trojan Go Menu       ${NC}            "                  
-echo -e "${YELLOW}│❏>${NC} 5 ${CY}Trojan GPW           ${NC}            "
+echo -e "${YELLOW}│❏${NC} 1 : ${CY}Ssh / OvPn           ${NC}            "
+echo -e "${YELLOW}│❏${NC} 2 : ${CY}Vmess Menu           ${NC}            "
+echo -e "${YELLOW}│❏${NC} 3 : ${CY}Vless Menu           ${NC}            "
+echo -e "${YELLOW}│❏${NC} 4 : ${CY}Trojan Go Menu       ${NC}            "                  
+echo -e "${YELLOW}│❏${NC} 5 : ${CY}Trojan GPW           ${NC}            "
 echo -e ""
 echo -e "${GREEEN}╭━━━━━「System Menu 」 ${NC}"
 echo -e "${YELLOW}│${NC}"
-echo -e "${YELLOW}│❏>${NC} 6 ${NC} ${CY}Extra  Menu"
-echo -e "${YELLOW}│❏>${NC} 7 ${NC} ${CY}Status Service"
-echo -e "${YELLOW}│❏>${NC} 8 ${NC} ${CY}Clear Cache"
-echo -e "${YELLOW}│❏>${NC} 9 ${NC} ${CY}Update Menu"
-echo -e "${YELLOW}│❏>${NC} x ${NC} ${CY}Exit"
+echo -e "${YELLOW}│❏${NC} 6 : ${CY}Extra  Menu"
+echo -e "${YELLOW}│❏${NC} 7 : ${CY}Status Service"
+echo -e "${YELLOW}│❏${NC} 8 : ${CY}Clear Cache"
+echo -e "${YELLOW}│❏${NC} 9 : ${CY}Update Menu"
+echo -e "${YELLOW}│❏${NC} x : ${CY}Exit"
+echo -e "       ${green}--------------------------${NC}"
+echo -e "       ${CY} EXPIRED SCRIPT${NC} : ${YELLOW} $exp Hari  ${NC}"
+echo -e "       ${CY} ORDER SCRIPT${NC}   : ${YELLOW} $Name      ${NC}"
+echo -e "       ${green}--------------------------${NC}"
+
 echo -e "${LWHITE}"
 read -p " 「Selected Menu 」  >>   "  opt
 case $opt in
