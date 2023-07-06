@@ -126,14 +126,13 @@ tram=$( free -m | awk 'NR==2 {print $2}' )
 uram=$( free -m | awk 'NR==2 {print $3}' )
 fram=$( free -m | awk 'NR==2 {print $4}' )
 clear 
-echo -e "${yl}❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏${NC}"                                                                 
-echo -e "\e[33m O S    \e[0m ❏  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
-echo -e "\e[33m RAM    \e[0m ❏  $tram MB"
-echo -e "\e[33m UPT    \e[0m ❏  $uptime "
-echo -e "\e[33m ISP    \e[0m ❏  $ISP"
-echo -e "\e[33m DOM    \e[0m ❏  $domain"	
-echo -e "\e[33m IPV    \e[0m ❏  $IPVPS"
-echo -e "${yl}❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏ ❏${NC}"	
+echo -e "${GREEEN}━━━━━[ OPERATING SY ]━━━━━${NC}"                                                                 
+echo -e "\e[33m O S  \e[0m ❏  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
+echo -e "\e[33m RAM  \e[0m ❏  $tram MB"
+echo -e "\e[33m UPT  \e[0m ❏  $uptime "
+echo -e "\e[33m ISP  \e[0m ❏  $ISP"
+echo -e "\e[33m DOM  \e[0m ❏  $domain"	
+echo -e "\e[33m IPV  \e[0m ❏  $IPVPS"
 echo -e "${GREEEN}━━━━━[ ACOUNT MENU ]━━━━━${NC}"
 echo -e "1 : ${CY}Ssh / OvPn           ${NC}            "
 echo -e "2 : ${CY}Vmess Menu           ${NC}            "
@@ -141,15 +140,15 @@ echo -e "3 : ${CY}Vless Menu           ${NC}            "
 echo -e "4 : ${CY}Trojan Go Menu       ${NC}            "                  
 echo -e "5 : ${CY}Trojan GPW           ${NC}            "
 echo -e "${GREEEN}━━━━━[ SYSTEM MENU ]━━━━━${NC}"
-echo -e "6 : ${CY}Extra  Menu"
-echo -e "7 : ${CY}Status Service"
-echo -e "8 : ${CY}Clear Cache"
-echo -e "9 : ${CY}Update Menu"
-echo -e "x : ${CY}Exit"
+echo -e "6 : ${CY}Extra  Menu     ${NC}"
+echo -e "7 : ${CY}Status Service  ${NC}"
+echo -e "8 : ${CY}Clear Cache     ${NC}"
+echo -e "9 : ${CY}Update Menu     ${NC}"
+echo -e "x : ${CY}Exit            ${NC}"
 echo -e "${GREEEN}━━━━━[ SEWA SCRIPT ]━━━━━${NC}"
 echo -e "${CY} EXPIRED SCRIPT${NC} : ${YELLOW} $exp2 Hari  ${NC}"
 echo -e "${CY} ORDER SCRIPT${NC}   : ${YELLOW} $Name      ${NC}"
-echo -e "${GREEEN}━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${GREEEN}━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${LWHITE}"
 read -p " 「Selected Menu 」  >>   "  opt
 case $opt in
